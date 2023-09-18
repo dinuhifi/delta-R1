@@ -6,14 +6,17 @@ app = Flask(__name__)
 
 @app.route("/detect/<sentence>")
 def detect(sentence):
-    translator = Translator()
-    res = translator.detect(sentence)
-    code = res.lang
-    lang = LANGUAGES[code]
-    response = {'Detected-language-code' : code,
-                'language' : lang,
-                'source-text' : sentence.encode("utf-8").decode("utf-8")}
-    return json.dumps(response, indent=4, ensure_ascii=False).encode('utf8')
+    try:
+        translator = Translator()
+        res = translator.detect(sentence)
+        code = res.lang
+        lang = LANGUAGES[code]
+        response = {'Detected-language-code' : code,
+                    'language' : lang,
+                    'source-text' : sentence.encode("utf-8").decode("utf-8")}
+        return json.dumps(response, indent=4, ensure_ascii=False).encode('utf8')
+    except:
+        return "error"
 
 @app.route("/translate/<sentence>/<code>")
 def translate(sentence,code):
