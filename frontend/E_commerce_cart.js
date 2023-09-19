@@ -34,6 +34,7 @@ function addToCart(laptop_id, ram_size, storage_size) {
 
     if (!selected_laptop){
         console.log("Invalid laptop id!");
+        return;
     }
 
     const selected_ram = selected_laptop.RAM.find((ram) => ram.size === ram_size);
@@ -41,6 +42,7 @@ function addToCart(laptop_id, ram_size, storage_size) {
 
     if (!selected_ram || !selected_storage){
         console.log("Invalid RAM or Storage");
+        return;
     }
 
     cart.push({'id' : laptop_id,
@@ -53,13 +55,14 @@ function addToCart(laptop_id, ram_size, storage_size) {
 
 function removeFromCart(index) {
 
-    if(index >= 0 || index < cart.length) {
+    if(index < cart.length) {
         cart.splice(index, 1);
 
         console.log("removed from cart");
         console.log(cart);
     } else {
         console.log("invalid index!")
+        return;
     }
 }
 
@@ -68,8 +71,10 @@ function calculateTotal() {
 
     for(const item of cart){
         const laptop = laptops.find((l) => l.id === item.id);
+        const RAMPRICE = laptop.RAM.find((r) => r.size === item.ram.size);
+        const STROAGESIZE = laptop.storage.find((s) => s.size === item.storage.size);
 
-        total += laptop.basePrice + laptop.RAM.price + laptop.storage.price
+        total += laptop.basePrice + RAMPRICE.price + STROAGESIZE.price;
     }
     console.log("total price: ", total);
 }
