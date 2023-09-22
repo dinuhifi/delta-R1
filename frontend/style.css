@@ -1,0 +1,26 @@
+.left {
+    text-align: center;
+      float: left;
+      width: 33%;
+      border: 2px solid black;
+  }
+  .center {
+      text-align: center;
+      float: left;
+      width: 33%;
+      border: 2px solid black;
+  }
+  .right {
+      text-align: center;
+      float: left;
+      width: 33%;
+      border: 2px solid black;
+  }
+  .middle {
+    text-align: center;
+    width: 100%;
+}
+
+.output {
+    text-align: center;
+}

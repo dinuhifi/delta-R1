@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>E-Commerce Cart Manager</title>
-    </head>
-    <body>
-        <div>
-            <h2>Products:</h2>
+
+<head>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div>
+
+    <h1 class="middle">Products:</h1>
+
+    <div class="left">
+
             <p>Standard <br> Base price: 1000 <br> RAM</p>
+            <input type="radio" name="ram1" value="500" title=" - 8GB RAM - "> 8GB : 500<br><input type="radio" name="ram1" value="1000" title=" - 16GB RAM - "> 16GB : 1000
+            <p>storage</p>
+            <input type="radio" name="storage1" value="500" title=" - 216GB Storage - "> 216GB : 500<br><input type="radio" name="storage1" value="1000" title=" - 512GB Storage - "> 512GB : 1000 <br><br>
+            <button id="button1">Add To Cart</button>
+
+  </div>
+
+  <div class="center">
+
+            <p>Standard <br> Base price: 1500 <br> RAM</p>
             <input type="radio" name="ram" value="500"> 8GB : 500<br><input type="radio" name="ram" value="1000"> 16GB : 1000
             <p>storage</p>
-            <input type="radio" name="storage" value="500"> 216GB : 500<br><input type="radio" name="storage" value="1000"> 512GB : 1000 <br>
+            <input type="radio" id="216gb" name="storage" value="500"> 216GB : 500<br><input type="radio" name="storage" value="1000"> 512GB : 1000 <br><br>
             <input type="submit" value="Add To Cart">
+
         </div>
-        <div>
-            <h2>Products:</h2>
-            <p>Standard <br> Base price: 1000 <br> RAM</p>
+
+    <div class="right">
+
+            <p>Pro <br> Base price: 2000 <br> RAM</p>
             <input type="radio" name="ram" value="500"> 8GB : 500<br><input type="radio" name="ram" value="1000"> 16GB : 1000
             <p>storage</p>
-            <input type="radio" name="storage" value="500"> 216GB : 500<br><input type="radio" name="storage" value="1000"> 512GB : 1000 <br>
+            <input type="radio" name="storage" value="500"> 216GB : 500<br><input type="radio" name="storage" value="1000"> 512GB : 1000 <br><br>
             <input type="submit" value="Add To Cart">
+
         </div>
-    </body>
+
+        <div id="output" class="output"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
