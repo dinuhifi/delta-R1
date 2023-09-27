@@ -6,7 +6,7 @@ import os
 processor = AutoImageProcessor.from_pretrained("microsoft/resnet-50")
 model = ResNetForImageClassification.from_pretrained("microsoft/resnet-50")
 
-path = "/Users/dinu/Desktop/delta R1/ML/resnet_50/predict/"
+path = "/predict/"
 dir = os.listdir(path)
 
 for file in dir:
