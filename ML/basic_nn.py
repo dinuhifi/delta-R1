@@ -22,9 +22,14 @@ for i in range(100):
     outputs = model(x.view(-1,1))
     loss = loss_fn(outputs, y.view(-1,1))
 
+    print("Epoch: ", i+1, "loss= ", loss.item())
+
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
 
 weight = model.linear.weight.item()
 print(weight)
+sample = torch.tensor([5,10,15,20], dtype=torch.float32)
+output = model(sample.view(-1, 1))
+print("Output: ", output.view(-1))
